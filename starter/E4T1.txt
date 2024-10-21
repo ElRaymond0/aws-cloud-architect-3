@@ -1,5 +1,12 @@
 
 
 # Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+One option would be to secure the SSH port to only trusted IP addresses which can be done through the security group via updating the ingress and egress ip addresses
+to only those known to us.
+Change the target SSH to not use password authentication.
+We could add an ACL to further restrict access to resources based on secure networks.
 
 # Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+IAM identities should be set up with the correct least privilege permissions for the S3 buckets, so even if the instance credentials were compromised they wouldn't have full access to the sensitive data.
+We could also use VPC endpoints, and block requests that don't come from unapproved IPs.
+We could even do more in terms of encrypting the secure files and having roles specific to decrypt them locking the data down even further.

@@ -1,3 +1,8 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
+There is a Low and a High severity brute force attack found in GuardDuty on an ec2 instance which are brute forcing the password to gain access.
+The actual EC2 instance is being used to perform the brute force attack leading to the High severity instance.
+There is also a Low severity attack probing an unprotected port. A port on the EC2 instance is not blocked by a security group, ACL or firewall.
 
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+GuardDuty utilises different data sources to begin monitoring. 1. CloudTrail 2. VPC flow logs (from running EC2 instances) 3. Route53 DNS logs. When this was enabled
+it would have used the VPC flow logs as its source of information to analyse detect the attack.

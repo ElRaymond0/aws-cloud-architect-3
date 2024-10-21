@@ -1,5 +1,7 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
+No IAM role least privilege definitions to gain access and upload to the S3 bucket. The reason I believe this is an issue is that if an account gets breached the attacker could upload a malicious file under the name of free_recipe. The public will then access this file and potentially run some malicious code in their browser.
 
 # Poor practice 2
+Add a security group to the untrusted subnet to restrict both inbound and outbound traffic. Currently this is left unsecure where attackers could then have full control over the S3 buckets

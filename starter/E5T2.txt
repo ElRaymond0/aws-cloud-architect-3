@@ -1,13 +1,19 @@
 # Identify tools that will allow you to do the following:
 
 ## Scan infrastructure as code templates
+Regula, Terrascan
 
 ### Example vulnerability
+Overly generous permission policies for IAM user roles, such as giving too many permissions for S3 buckets etc.
 
 ##Scan AMI’s or containers for OS vulnerabilities
+Clair, Anchore
 
 ### Example vulnerability
+A common example these scans can pick up on is security compliance such as allowing SSH password authentication.
 
 ##Scan an AWS environment for cloud configuration vulnerabilities
+Prowler, Cloudsploit
 
 ### Example vulnerability
+Not having S3 bucket versioning enabled, or too generous permissions. 
